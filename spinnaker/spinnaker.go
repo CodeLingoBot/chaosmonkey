@@ -95,7 +95,7 @@ func getClientX509(x509Cert, x509Key string) (*http.Client, error) {
 	}
 	tlsConfig := &tls.Config{
 		Certificates:       []tls.Certificate{cert},
-		InsecureSkipVerify: true,
+		InsecureSkipVerify: false,
 	}
 	transport := &http.Transport{TLSClientConfig: tlsConfig}
 	return &http.Client{Transport: transport}, nil
